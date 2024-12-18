@@ -1,8 +1,8 @@
 export interface IBid {
   id: number;
   name: string;
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
   description: string;
   priceStart: number;
   stepBid: number;
@@ -14,8 +14,8 @@ export interface ICart {
   id: number;
   user: IUser;
   isActive: boolean;
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
   cartDetails: ICartDetail[];
 }
 export interface ICartDetail {
@@ -23,8 +23,8 @@ export interface ICartDetail {
   cart: ICart;
   product: IProduct;
   quantity: number;
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
 }
 export interface ICategory {
   id: number;
@@ -34,8 +34,14 @@ export interface ICategory {
   image: string;
   properties: ICategoryProperty[];
   products: IProduct[];
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
+}
+export interface ICategoryProperty {
+  displayName: string;
+  name: string;
+  type: ICategoryPropertyType;
+  options: string[];
 }
 export interface IComment {
   id: number;
@@ -45,15 +51,15 @@ export interface IComment {
   parentComment: IComment;
   replies: IComment[];
   user: IUser;
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
 }
 export interface IFeedback {
   id: number;
   rating: number;
   content: string;
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
 }
 export interface INotification {
   id: number;
@@ -76,21 +82,34 @@ export interface IOrderDetail {
   product: IProduct;
   quantity: number;
   price: number;
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
 }
 export interface IOrder {
   id: number;
   user: IUser;
   status: string;
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
   orderAddress: IOrderAddress;
   orderUserInfo: IOrderUserInfo;
   store: IStore;
   orderDetails: IOrderDetail[];
   isApplyUserSavePoints: boolean;
   totalAmount: number;
+}
+export interface IOrderAddress {
+  address: string;
+  province: string;
+  district: string;
+  ward: string;
+  shippingFee: number;
+}
+export interface IOrderUserInfo {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  email: string;
 }
 export interface IProduct {
   id: number;
@@ -102,16 +121,36 @@ export interface IProduct {
   shortDescription: string;
   nutritionInformations: string;
   category: ICategory;
-  properties: { [key: string]: string | number | boolean };
-  images: Istring[];
+  properties: { [key: string]: string | number | boolean; };
+  images: string[];
   thumbnail: string;
   isAvailable: boolean;
   buyCount: number;
   storeProducts: IStoreProduct[];
   comments: IComment[];
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
   orderDetails: IOrderDetail[];
+}
+export interface IProductPrice {
+  price: number;
+  displayPrice: string;
+  salePrice: number;
+  displaySalePrice: string;
+}
+export interface ISettings {
+  id: number;
+  name: string;
+  homePage: IHomePageConfig;
+  headerConfigs: IHeaderConfig;
+  footerConfigs: IFooterConfig;
+}
+export interface IHeaderConfig {
+}
+export interface IFooterConfig {
+}
+export interface IHomePageConfig {
+  slideshow: string[];
 }
 export interface IStoreProduct {
   id: number;
@@ -144,6 +183,9 @@ export interface ITenant {
   logoUrl: string;
   primaryColorScheme: string;
 }
+export interface ITenantSettings {
+  carouselImages: string[];
+}
 export interface IUserDevice {
   id: number;
   deviceToken: string;
@@ -162,10 +204,59 @@ export interface IUser {
   cart: ICart;
   isVerified: boolean;
   role: IUserRole;
-  createdAt: IDate;
-  updatedAt: IDate;
+  createdAt: Date;
+  updatedAt: Date;
   devices: IUserDevice[];
   store: IStore;
   comments: IComment[];
   orders: IOrder[];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
