@@ -26,6 +26,11 @@ export interface ICartDetail {
   createdAt: Date;
   updatedAt: Date;
 }
+export enum ICategoryPropertyType {
+  number = number,
+  boolean = boolean,
+  text = string,
+}
 export interface ICategory {
   id: number;
   name: string;
@@ -65,7 +70,7 @@ export interface INotification {
   id: number;
   notification_token: INotificationToken;
   title: string;
-  body: Iany;
+  body: any;
   created_by: string;
   status: string;
 }
@@ -84,6 +89,14 @@ export interface IOrderDetail {
   price: number;
   createdAt: Date;
   updatedAt: Date;
+}
+export enum IOrderStatus {
+  PENDING = pending,
+  RECEIVED = received,
+  PROCESSING = processing,
+  SHIPPING = shipping,
+  DELIVERED = delivered,
+  CANCELLED = cancelled,
 }
 export interface IOrder {
   id: number;
@@ -191,6 +204,12 @@ export interface IUserDevice {
   deviceToken: string;
   user: IUser;
 }
+export enum IUserRole {
+  USER = user,
+  STAFF = staff,
+  MANAGER = manager,
+  ADMIN = admin,
+}
 export interface IUser {
   id: number;
   username: string;
@@ -211,6 +230,12 @@ export interface IUser {
   comments: IComment[];
   orders: IOrder[];
 }
+
+
+
+
+
+
 
 
 

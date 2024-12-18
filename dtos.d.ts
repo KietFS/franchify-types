@@ -49,7 +49,6 @@ export enum ICategoryPropertyType {
   boolean = boolean,
   string = string,
 }
-
 export interface ICategoryPropertyDto {
   name: string;
   displayName: string;
