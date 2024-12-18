@@ -126,7 +126,7 @@ export interface ICreateProductDto {
   upc: string;
   name: string;
   price: IProductPriceDto;
-  properties: { [key: string]: string | number | boolean };
+  properties: { [key: string]: string | number | boolean; };
   isOnSale: boolean;
   fullDescription: string;
   shortDescription: string;
@@ -138,7 +138,7 @@ export interface ICreateProductDto {
 export interface IUpdateProductDto {
   upc: string;
   name: string;
-  properties: { [key: string]: string | number | boolean };
+  properties: { [key: string]: string | number | boolean; };
   price: IProductPriceDto;
   isOnSale: boolean;
   fullDescription: string;
@@ -189,3 +189,68 @@ export interface IIVerifyOtpPayloadDto {
   phoneNumber: string;
   otpCode: string;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
