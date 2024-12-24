@@ -26,23 +26,6 @@ By maintaining shared types, this repository ensures:
 
 ---
 
-### Getting Started
-
-#### Usage
-Import the types into your project as needed. For example:
-
-```typescript
-import { UserType, ProductType } from 'mf-types';
-
-const user: UserType = {
-  id: 1,
-  name: 'John Doe',
-  email: 'johndoe@example.com',
-};
-```
-
----
-
 ### Development Workflow
 
 #### Generating Types
