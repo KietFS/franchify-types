@@ -108,7 +108,6 @@ export interface IOrder {
   orderUserInfo: IOrderUserInfo;
   store: IStore;
   orderDetails: IOrderDetail[];
-  isApplyUserSavePoints: boolean;
   totalAmount: number;
 }
 export interface IOrderAddress {
@@ -134,7 +133,7 @@ export interface IProduct {
   shortDescription: string;
   nutritionInformations: string;
   category: ICategory;
-  properties: { [key: string]: string | number | boolean; };
+  properties: { [key: string]: string | number | boolean };
   images: string[];
   thumbnail: string;
   isAvailable: boolean;
@@ -158,10 +157,8 @@ export interface ISettings {
   headerConfigs: IHeaderConfig;
   footerConfigs: IFooterConfig;
 }
-export interface IHeaderConfig {
-}
-export interface IFooterConfig {
-}
+export interface IHeaderConfig {}
+export interface IFooterConfig {}
 export interface IHomePageConfig {
   slideshow: string[];
 }
@@ -230,58 +227,3 @@ export interface IUser {
   comments: IComment[];
   orders: IOrder[];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
