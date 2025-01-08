@@ -90,6 +90,12 @@ export interface IOrderDetail {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export enum PaymentMethod {
+  COD = "COD",
+  MOMO = "MOMO",
+  VNPAY = "VNPAY",
+}
 export enum IOrderStatus {
   PENDING = pending,
   RECEIVED = received,
