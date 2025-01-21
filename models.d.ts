@@ -90,13 +90,6 @@ export interface IOrderDetail {
   createdAt: Date;
   updatedAt: Date;
 }
-
-export enum PaymentMethod {
-  COD = "COD",
-  MOMO = "MOMO",
-  VNPAY = "VNPAY",
-}
-
 export enum IOrderStatus {
   PENDING = pending,
   RECEIVED = received,
@@ -105,10 +98,16 @@ export enum IOrderStatus {
   DELIVERED = delivered,
   CANCELLED = cancelled,
 }
+export enum IPaidStatus {
+  PAID = paid,
+  UNPAID = unpaid,
+}
 export interface IOrder {
   id: number;
   user: IUser;
   status: string;
+  paymentMethod: IPaymentMethod;
+  paidStatus: IPaidStatus;
   createdAt: Date;
   updatedAt: Date;
   orderAddress: IOrderAddress;
@@ -129,6 +128,12 @@ export interface IOrderUserInfo {
   lastName: string;
   phoneNumber: string;
   email: string;
+}
+export interface IPayment {
+  id: number;
+  paymentMethod: IPaymentMethod;
+  paymentUrl: string;
+  order: IOrder;
 }
 export interface IProduct {
   id: number;
