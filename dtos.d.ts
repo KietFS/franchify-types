@@ -63,6 +63,40 @@ export interface IUpdateCategoryDto {
   name: string;
   properties: ICategoryPropertyDto[];
 }
+export interface ICreateStoreDto {
+  name: string;
+  supportPickup: boolean;
+  supportDelivery: boolean;
+  openTime: number;
+  closeTime: number;
+  storeCode: number;
+  lng: number;
+  lat: number;
+}
+export interface ICreateUserDto {
+  username: string;
+  email: string;
+  phoneNumber: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+}
+export interface IICreateUserPayloadDto {
+  username: string;
+  email: string;
+  phoneNumber: string;
+  firstName: string;
+  lastName: string;
+  role: string;
+  password: string;
+  isVerified: boolean;
+}
+export interface IForgotPassWordDto {
+  phoneNumber: string;
+}
+export interface IIForgotPasswordPayloadDto {
+  phoneNumber: string;
+}
 export interface IGetCategoryDto {
   name: string;
   page: number;
@@ -90,9 +124,21 @@ export interface IGetProductDetailDto {
   storeId: number;
   upc: string;
 }
+export interface IGetStoreDto {
+  name: string;
+  page: number;
+  pageSize: number;
+  currentLng: string;
+  currentLat: string;
+}
 export interface ILinkProductDto {
   productIds: number[];
   storeId: number;
+}
+export enum IPaymentMethod {
+  COD = COD,
+  MOMO = MOMO,
+  VNPAY = VNPAY,
 }
 export interface ICreateOrderAddressDto {
   address: string;
@@ -110,10 +156,15 @@ export interface ICreateOrderUserInfoDto {
 export interface ICreateOrderDto {
   orderAddress: ICreateOrderAddressDto;
   orderUserInfo: ICreateOrderUserInfoDto;
+  paymentMethod: IPaymentMethod;
   storeId: number;
 }
 export interface IUpdateOrderStatusDto {
   status: string;
+}
+export interface ICreateVNPayUrlDto {
+  amount: number;
+  orderId: number;
 }
 export interface IProductPriceDto {
   price: number;
@@ -125,7 +176,7 @@ export interface ICreateProductDto {
   upc: string;
   name: string;
   price: IProductPriceDto;
-  properties: { [key: string]: string | number | boolean };
+  properties: { [key: string]: string | number | boolean; };
   isOnSale: boolean;
   fullDescription: string;
   shortDescription: string;
@@ -137,7 +188,7 @@ export interface ICreateProductDto {
 export interface IUpdateProductDto {
   upc: string;
   name: string;
-  properties: { [key: string]: string | number | boolean };
+  properties: { [key: string]: string | number | boolean; };
   price: IProductPriceDto;
   isOnSale: boolean;
   fullDescription: string;
@@ -160,6 +211,36 @@ export interface ISendOtpDto {
 }
 export interface IISendOtpPayloadDto {
   phoneNumber: string;
+}
+export interface ISignInUserDto {
+  phoneNumber: string;
+  password: string;
+}
+export interface IISignInUserPayloadDto {
+  phoneNumber: string;
+  password: string;
+}
+export interface IStoreDto {
+  id: number;
+  name: string;
+  storeCode: string;
+  supportDelivery: boolean;
+  supportPickup: boolean;
+  openTime: number;
+  closeTime: number;
+  lng: number;
+  lat: number;
+}
+export interface IUpdateStoreDto {
+  name: string;
+  supportPickup: boolean;
+  supportDelivery: boolean;
+  openTime: number;
+  closeTime: number;
+  storeCode: number;
+  lng: number;
+  lat: number;
+  staffs: number[];
 }
 export interface IStoreDto {
   id: number;
@@ -188,3 +269,92 @@ export interface IIVerifyOtpPayloadDto {
   phoneNumber: string;
   otpCode: string;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
